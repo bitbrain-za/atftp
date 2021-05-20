@@ -227,8 +227,10 @@ int tftp_mtftp_receive_file(struct client_data *data)
 
      while (1)
      {
+#ifdef DEBUG
           if (data->delay)
-               usleep(data->delay);
+               usleep(data->delay*1000);
+#endif
           if (tftp_cancel)
           {
                if (from.ss_family == 0)
