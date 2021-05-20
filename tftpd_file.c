@@ -798,6 +798,7 @@ int tftpd_send_file(struct thread_data *data)
                if (feof(fp))
                     last_block = block_number;
 
+               usleep(1000);
                if (multicast)
                {
                     tftp_send_data(sockfd, &data->sa_mcast,

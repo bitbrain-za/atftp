@@ -186,10 +186,8 @@ int tftp_receive_file(struct client_data *data)
 
      while (1)
      {
-#ifdef DEBUG
           if (data->delay)
-               usleep(data->delay*1000);
-#endif
+               usleep(data->delay);
           if (tftp_cancel)
           {
                if (from.ss_family == 0)
@@ -686,10 +684,8 @@ int tftp_send_file(struct client_data *data)
 
      while (1)
      {
-#ifdef DEBUG
           if (data->delay)
-               usleep(data->delay*1000);
-#endif
+               usleep(data->delay);
           if (tftp_cancel)
           {
                /* Make sure we know the peer's address */
